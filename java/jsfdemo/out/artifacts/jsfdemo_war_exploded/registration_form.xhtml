@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Student Registration Form</title>
+</h:head>
+
+<h:body>
+    <h:form>
+        <h3 align="center">
+            Student Registration Form
+            <h:graphicImage name="bus.jpg" library="image" style="width: 50px;height: 50px"/>
+        </h3>
+
+        <h:panelGrid columns="6" style="color: blue">
+            <h:outputLabel value="Last Name"/>
+            <h:inputText id="last_name" value="#{mahim.lastname}"/>
+            <h:outputLabel value="First Name"/>
+            <h:inputText id="first_name" value="#{mahim.firstname}"/>
+            <h:outputLabel value="dept"/>
+            <h:inputText id="dept" value="#{mahim.dept}"/>
+        </h:panelGrid>
+
+        <h:panelGrid columns="2" style="color: crimson">
+            <h:outputLabel> Gender</h:outputLabel>
+            <h:selectOneRadio id="gender" value="#{mahim.gender}">
+                <f:selectItem itemLabel="Male" itemValue="Male"/>
+                <f:selectItem itemLabel="Female" itemValue="Female"/>
+            </h:selectOneRadio>
+        </h:panelGrid>
+
+        <h:panelGrid columns="4">
+            <h:outputLabel value="Major"/>
+            <h:selectOneMenu id="major" value="#{mahim.major}">
+                <f:selectItem itemValue="CSE"/>
+                <f:selectItem itemValue="ICT"/>
+                <f:selectItem itemValue="TE"/>
+            </h:selectOneMenu>
+
+            <h:outputLabel value="minor"/>
+            <h:selectManyListbox id="minor" value="#{mahim.minor}">
+                <f:selectItem itemValue="software"/>
+                <f:selectItem itemValue=" software architecture"/>
+                <f:selectItem itemValue="digital Logic design"/>
+                <f:selectItem itemValue="networking"/>
+            </h:selectManyListbox>
+        </h:panelGrid>
+
+        <h:panelGrid columns="4">
+            <h:outputLabel value="Hobby"/>
+            <h:selectManyCheckbox id="hobby" value="#{mahim.hobby}">
+                <f:selectItem itemValue="cricket"/>
+                <f:selectItem itemValue="football"/>
+                <f:selectItem itemValue="sports programming"/>
+            </h:selectManyCheckbox>
+        </h:panelGrid>
+
+        <h:panelGrid columns="1">
+            <h:outputLabel value="Remarks"/>
+            <h:inputTextarea id="remarks" style="width: 400px; height: 150px" value="#{mahim.remarks}"/>
+        </h:panelGrid>
+
+        <h:commandButton value="Register"/>
+        <br />
+        <h:outputText escape="false" style="color: red" value="#{mahim.response}"/>
+
+    </h:form>
+</h:body>
+</html>

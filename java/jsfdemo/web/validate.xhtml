@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Form Validation</title>
+</h:head>
+
+<h:body>
+    <h:form>
+        <h:panelGrid columns="3">
+            <h:outputLabel value="Name: "/>
+            <h:inputText id="name" required="true" requiredMessage="Name is required" validatorMessage="Name must be between 1 to 10 letter"
+                         value="#{valid.name}">
+                <f:validateLength minimum="1" maximum="10"/>
+            </h:inputText>
+            <h:message for="name" style="color: red"/>
+
+            <h:outputLabel value="SSN: "/>
+            <h:inputText id="ssn" required="true" requiredMessage="SSn is requires"
+                         validatorMessage="Invalid SSN" value="#{valid.ssn}">
+                <f:validateRegex pattern="[\d]{3}-[\d]{2}-[\d]{4}"/>
+            </h:inputText>
+            <h:message for="ssn" style="color: blue"/>
+
+            <h:outputLabel value="Age: "/>
+            <h:inputText id="age" required="true" requiredMessage="Age is required"
+                         validatorMessage="age must be between 15 to 45" value="#{valid.age}">
+                <f:validateLongRange minimum="15" maximum="45"/>
+            </h:inputText>
+            <h:message for="age" style="color: chartreuse"/>
+
+            <h:outputLabel value="Height"/>
+            <h:inputText id="height" required="true" requiredMessage="Age is required"
+                         validatorMessage="height must be between 4 to 6 foot" value="#{valid.height}">
+                <f:validateLongRange minimum="4" maximum="6"/>
+            </h:inputText>
+            <h:message for="height" style="color: darkmagenta"/>
+        </h:panelGrid>
+        <h:commandButton value="Submit"/>
+        <br />
+        <h:outputText escape="false" style="color: deeppink" value="#{valid.response}"/>
+    </h:form>
+</h:body>
+
+</html>
