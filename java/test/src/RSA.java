@@ -11,17 +11,10 @@ public class RSA {
         //System.out.println("p="+p);
 
         BigInteger q= BigInteger.probablePrime(256, ran);
-        //System.out.println("q="+q);
-
-        //BigInteger r=BigInteger.probablePrime(256,ran);
-        //System.out.println("r="+r);
-
-        //BigInteger s=BigInteger.probablePrime(256,ran);
-        //System.out.println("s="+s);
 
         double end=System.nanoTime();
         double total= ((end-start)/1e6);
-        System.out.println("calculation time:"+total);///end
+        System.out.println("calculation time for prime generation:"+total);///end
 
 
         BigInteger n=p.multiply(q);
@@ -44,26 +37,18 @@ public class RSA {
         System.out.println("e="+e);
         System.out.println("d="+d);
 
-        /*BigInteger f;
-        while (true){
-            BigInteger tmp=new BigInteger(40,ran);
-            if (tmp.gcd(phi).equals(new BigInteger("1"))){
-                f=tmp;
-                break;
-            }
-        }
-
-        BigInteger g=f.modInverse(phi);
-        System.out.println("f="+f);
-        System.out.println("g="+g); */
-
-
-
+        start=System.nanoTime();
         BigInteger c=new BigInteger("12321").modPow(e,n);
-
+        end=System.nanoTime();
+        total=((end-start)/1e6);
+        System.out.println("calculation time for encryption:"+total);
         System.out.println("cipher="+c);
 
+        start=System.nanoTime();
         BigInteger m=c.modPow(d,n);
+        end=System.nanoTime();
+        total=((end-start)/1e6);
+        System.out.println("calculation time for decryption:"+total);
 
         System.out.println("message="+m);
 
