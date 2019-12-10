@@ -4,40 +4,49 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
     <servlet>
-        <servlet-name>Login</servlet-name>
-        <servlet-class>Login</servlet-class>
+        <servlet-name>ViewServlet</servlet-name>
+        <servlet-class>CRUD.ViewServlet</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>WelcomeServlet</servlet-name>
-        <servlet-class>WelcomeServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>MySearch</servlet-name>
-        <servlet-class>MySearch</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>ReturnPage</servlet-name>
-        <servlet-class>ReturnPage</servlet-class>
-    </servlet>
-
-
     <servlet-mapping>
-        <servlet-name>Login</servlet-name>
-        <url-pattern>/login</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>WelcomeServlet</servlet-name>
-        <url-pattern>/welcome</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ReturnPage</servlet-name>
-        <url-pattern>/my-search</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>MySearch</servlet-name>
-        <url-pattern>/new-search</url-pattern>
+        <servlet-name>ViewServlet</servlet-name>
+        <url-pattern>/ViewServlet</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>SaveServlet</servlet-name>
+        <servlet-class>CRUD.SaveServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SaveServlet</servlet-name>
+        <url-pattern>/SaveServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>EditServlet</servlet-name>
+        <servlet-class>CRUD.EditServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditServlet</servlet-name>
+        <url-pattern>/EditServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>EditServlet2</servlet-name>
+        <servlet-class>CRUD.EditServlet2</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditServlet2</servlet-name>
+        <url-pattern>/EditServlet2</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeleteServlet</servlet-name>
+        <servlet-class>CRUD.DeleteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteServlet</servlet-name>
+        <url-pattern>/DeleteServlet</url-pattern>
+    </servlet-mapping>
 
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>

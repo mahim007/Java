@@ -19,8 +19,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="Generic" level="application_server_libraries" />
-    <orderEntry type="library" name="javax.servlet:javax.servlet-api:4.0.1" level="project" />
-    <orderEntry type="library" name="mysql:mysql-connector-java:8.0.17" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="Generic" level="application_server_libraries" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="javax.servlet:javax.servlet-api:4.0.1" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="mysql:mysql-connector-java:5.1.48" level="application" />
   </component>
 </module>

@@ -30,7 +30,7 @@ public class EditServlet extends HttpServlet {
         out.print("<tr><td>Email:</td><td><input type='email' name='email' value='"+employee.getEmail()+"'/></td></tr>");
         out.print("<tr><td>Country:</td><td>");
         out.print("<select name='country' style='width:150px'>");
-        out.print("<option>India</option>");
+        out.print("<option>Bnagladesh</option>");
         out.print("<option>USA</option>");
         out.print("<option>UK</option>");
         out.print("<option>Other</option>");
