@@ -1,6 +1,7 @@
 package com.mahim.learningjava17.collectionApi;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 
 public class ArrayListRunner {
@@ -56,6 +57,16 @@ public class ArrayListRunner {
         System.out.println(clone.getClass());
         System.out.println(integers.getClass());
         System.out.println(objects.getClass());
+
+        integers.clear();
+        System.out.println("###clearing all data ###");
+        integers.add(0,3);
+        integers.add(1,1);
+        integers.add(1,2);
+        integers.add(2,1);
+
+        integers.removeAll(Collections.singleton(Integer.valueOf("1")));
+        System.out.println(integers);
 
     }
 }
