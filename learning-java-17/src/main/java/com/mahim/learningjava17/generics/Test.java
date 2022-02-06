@@ -14,5 +14,8 @@ public class Test {
         Gen<Student> g3 = new Gen<>(student);
         g3.show();
         System.out.println(g3.get());
+        Student anotherStudent = g3.get();
+        System.out.println(anotherStudent);
+        System.out.println("no type casting needed!");
     }
 }
