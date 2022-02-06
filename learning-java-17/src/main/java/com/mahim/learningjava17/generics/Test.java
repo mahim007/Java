@@ -9,5 +9,10 @@ public class Test {
         Gen<Integer> g2 = new Gen<>(10);
         g2.show();
         System.out.println(g2.get());
+
+        Student student = new Student(1, "mahim", "mahim@gmail.com");
+        Gen<Student> g3 = new Gen<>(student);
+        g3.show();
+        System.out.println(g3.get());
     }
 }
