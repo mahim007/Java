@@ -1,0 +1,52 @@
+-- Need of Concurrent Collections
+     1. Traditional Collection object (like ArrayList, HashMap etc) can be accessed by multiple threads simultaneously
+     and there may be chance of data inconsistency problem and hence these are not thread safe.
+
+     2. Already existing thread safe collections (Vector, HashTable, synchronizedList(), synchronizedSet(), synchronizedMap())
+     performance wise not up to the mark.
+
+     3. Because for every operation: even for Read operation also total collection object will be locked by only one
+     thread at a time and it increases waiting time of threads.
+
+     4. Another big problem with traditional Collections is while one thread iterating Collection, the other threads are
+     not allowed to modify Collection object simultaneously. If we are trying to modify then we will get
+     ConcurrentModificationException.
+     see ConcurrentModificationExceptionDemo.java
+
+     5. Hence these traditional Collection objects are not suitable for Scalable Multi Threaded Applications.
+
+     6. To overcome these problems SUN people introduced Concurrent Collections in 1.5 version.
+
+-- Difference between traditional and concurrent Collections
+    1. Concurrent Collections are always thread safe.
+    2. When compared to traditional thread safe Collections performance is More because of different locking mechanism.
+    3. While one thread interacting Collection the other threads are allowed to modify Collection in safe manner.
+    4. Hence Concurrent Collections never threw ConcurrentModificationException.
+    5. Important Concurrent Collections classes are:
+        1. ConcurrentHashMap
+        2. CopyOnWriteArrayList
+        3. CopyOnWriteArraySet
+
+-- ConcurrentMap interface
+    -- three extra methods - putIfAbsent(), remove(), replace()
+
+-- ConcurrentHashMap
+    -- Underlying data structure is Hashtable
+    -- ConcurrentHashMap allows Concurrent read and Thread safe update operations.
+    -- To perform read operations thread won't require any lock. But to perform update operation thread requires lock
+    but it's the lock of only a particular part of Map (Bucket Level Lock)
+    -- Instead of whole map Concurrent update achieved by internally dividing Map into smaller portion which is defined
+    Concurrency Level.
+    -- The default Concurrency Level is 16.
+    -- That means ConcurrentHashMap allows simultaneously read operation and simultaneously 16 write operations.
+    -- null is not allowed for both Keys and Values.
+    -- While one Thread iterating other Thread can perform Update Operations and ConcurrentHashMap never throw
+    ConcurrentHashMapException.
+
+    -- Constructors
+        1. ConcurrentHashMap m = new ConcurrentHashMap(); -> default initialCapacity = 16, default fillRatio=0.75,
+            default concurrencyLevel=16
+        2. ConcurrentHashMap m = new ConcurrentHashMap(int initialCapacity);
+        3. ConcurrentHashMap m = new ConcurrentHashMap(int initialCapacity, float fillRatio);
+        4. ConcurrentHashMap m = new ConcurrentHashMap(int initialCapacity, float fillRatio, int concurrencyLevel);
+        5. ConcurrentHashMap m = new ConcurrentHashMap(Map m);
