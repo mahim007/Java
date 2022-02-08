@@ -50,3 +50,13 @@
         3. ConcurrentHashMap m = new ConcurrentHashMap(int initialCapacity, float fillRatio);
         4. ConcurrentHashMap m = new ConcurrentHashMap(int initialCapacity, float fillRatio, int concurrencyLevel);
         5. ConcurrentHashMap m = new ConcurrentHashMap(Map m);
+
+-- CopyOnWriteArrayList
+    -- it's a concurrent collection
+    -- it's a thread-safe version of ArrayList object
+    -- for every update operation a separate cloned copy will be created and synced later by JVM. low performance issue.
+    -- best choice if read operations are huge and write operations are less.
+    -- no ConcurrentModificationException thrown
+    -- iterator on COWAL is fail-safe
+    -- iterator of normal ArrayList can perform remve() operation
+    -- COWAL can not perform remove() operation. if trying throws UnsupportedOperationException (RuntimeException)
