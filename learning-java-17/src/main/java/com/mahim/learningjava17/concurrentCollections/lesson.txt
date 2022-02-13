@@ -60,3 +60,12 @@
     -- iterator on COWAL is fail-safe
     -- iterator of normal ArrayList can perform remve() operation
     -- COWAL can not perform remove() operation. if trying throws UnsupportedOperationException (RuntimeException)
+
+    -- Constructors
+    1. CopyOnWriteArrayList l = new CopyOnWriteArrayList();
+    2. CopyOnWriteArrayList l = new CopyOnWriteArrayList(Collection c);
+    3. CopyOnWriteArrayList l = new CopyOnWriteArrayList(Object[] a);
+
+    -- new methods
+    1. boolean addIfAbsent(Object o);
+    2. int addAllAbsent(Collection c);
