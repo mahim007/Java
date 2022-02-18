@@ -1,0 +1,62 @@
+Static Control Flow
+--------------------
+whenever we are executing a java class, the following sequence of activities will be executed as the part of static
+control flow:
+    1. identification of static members from top to bottom.
+    2. execution of static variables assignments and static blocks from top to bottom.
+    3. execution of main method.
+
+RIWO - Read Indirectly Write Only
+-- inside a static block, if we are trying to read a variable that read operation is called direct read.
+-- if we are calling a method and within that method if we are trying to read a variable that read operaion is called
+    indirect read.
+-- if a variable is just identified by the JVM and the original value not yet assigned, then the variable is said to be
+    in RIWO state.
+-- if a variable is in RIWO state, then we can't perform direct read. But we can perform indirect read.
+-- if we are trying to read directly then we will get compile time error saying: Illegal forward reference.
+
+Static Block
+------------
+-- static blocks will be executed at the time of class loading. If we need to execute any code at the time of class
+    loading then we need to use static block.
+    -- example 1: at the time of java class loading the corresponding native library should be loaded, hence we have to
+    define this activity inside static block.
+    -- example 2: after loading every database direr class, we have to register driver class with driver manager.
+    but inside database driver class there is a static block to perform this activity, and we are not responsible to
+    register explicitly.
+-- within a class we can declare any number of static blocks, but all these static blocks will be executed from top to
+    bottom.
+-- from 1.7 version onwards main method is mandatory for program execution. So it's not possible to print anything
+    to the console without a main method.
+
+static control in parent to child relationship
+----------------------------------------------
+1. identification of static members from parent to child.
+2. execution of static variables assignments and static block from parent to child.
+3. execution of only child class main method.
+
+Instance Control Flow
+---------------------
+whenever we are executing a java class, static control flow will execute first.
+in the static control flow if we are creating an object, the following sequence of events will be executed as a part of
+instance control flow.
+
+1. identification of instance members from top to bottom.
+2. execution of instance variable assignments and instance blocks from top to bottom.
+3. execution of constructor.
+
+static control flow is one time activity which will be performed at the time of class loading.
+but instance control flow is not one time activity, and it will be performed for every object creation.
+object creation is the most costly operation, if there is no specific requirements then it's not recommended creating
+object.
+
+instance control flow in parent to child relationship
+-----------------------------------------------------
+whenever we are creating child class objects the following sequence of events will be performed automatically as a part
+of instance control flow.
+
+1. identification of instance members from parent to child.
+2. execution of instance variable assignments and instance blocks only in parent class.
+3. execution of parent constructor.
+4. execution of instance variable assignments and instance blocks only in child class.
+5. execution of child constructor.
