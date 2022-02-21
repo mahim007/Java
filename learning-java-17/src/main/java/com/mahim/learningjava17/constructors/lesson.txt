@@ -1,0 +1,26 @@
+Constructors
+------------
+-- once we create and object compulsory we perform initialization, then only the object is in a position to respond
+    properly.
+-- whenever we are creating an object some piece of the code will be executed automatically to perform initialization of
+    the object. this piece of the code is noting but constructor. Hence the main purpose of constructor is to perform
+    initialization of an object, but not to create object.
+
+difference between constructor and instance block
+-------------------------------------------------
+-- other than initialization if we want to perform any activity for every object creation then we should go for instance
+    block (like updating one entry in the database for every object creation or incrementing count value for every
+    object creation)
+-- both constructor and instance block have their own different purposes and replacing one concept with another concept
+    may not work always.
+-- both constructor and instance block will be executed for every object creation, but instance block first followed by
+    constructor.
+-- demo program to print a number of objects created for a class. -> CountDemo.java
+
+Constructor properties
+----------------------
+-- name of the class and name of the constructor must be matched.
+-- return type concept not applicable for constructor even void also.
+-- by mistake if we are trying to declare return type for the constructor then we won't get any compile time error,
+    because compiler treats it as a method. -> NotConstructor.java
+    it's valid to have a method whose name is same as class name, but it's not a good practice.

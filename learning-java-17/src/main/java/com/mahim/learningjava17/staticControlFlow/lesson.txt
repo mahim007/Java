@@ -60,3 +60,21 @@ of instance control flow.
 3. execution of parent constructor.
 4. execution of instance variable assignments and instance blocks only in child class.
 5. execution of child constructor.
+
+-- from static area we can't access instance members directly, because while executing static area JVM may not identify
+    instance members.
+
+-- in how many ways we can create an object in java,or how many ways we can get objects in java:
+    1. by using new operator.
+    2. by using newInstance() method.
+        Test t = (Test) Class.forName("Test").newInstance();
+    3.by using factory methods.
+        Runtime r = Runtime.getRuntime();
+        DateFormat df = DateFormat.getInstance();
+    4. By using clone() method.
+        Test t1 = new Test();
+        Test t2 = (Test) t1.clone();
+    5. By using deserialization.
+        FileInputStream fis = new FileInputStream("abc.ser");
+        ObjectInputStream ois = new OIS(fis);
+        Dog d2 = (Dog) ois.readObject();
