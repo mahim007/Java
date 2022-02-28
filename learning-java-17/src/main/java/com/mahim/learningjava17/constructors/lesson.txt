@@ -3,7 +3,7 @@ Constructors
 -- once we create and object compulsory we perform initialization, then only the object is in a position to respond
     properly.
 -- whenever we are creating an object some piece of the code will be executed automatically to perform initialization of
-    the object. this piece of the code is noting but constructor. Hence the main purpose of constructor is to perform
+    the object. this piece of the code is noting but constructor. Hence, the main purpose of constructor is to perform
     initialization of an object, but not to create object.
 
 difference between constructor and instance block
@@ -24,3 +24,52 @@ Constructor properties
 -- by mistake if we are trying to declare return type for the constructor then we won't get any compile time error,
     because compiler treats it as a method. -> NotConstructor.java
     it's valid to have a method whose name is same as class name, but it's not a good practice.
+-- the only applicable modifiers for constructors are public, private, protected, default. if we are trying to use
+    any other modifier we will get compile time error.
+-- default constructor: compiler is responsible for generating default constructor. (if we are not writing any constructor)
+-- every java class contains constructor, it may be default constructor provided by compiler, or explicit constructor
+    provided by programmer, but not both simultaneously.
+
+Prototype of default constructor
+--------------------------------
+1. always no-arg constructor.
+2. access modifier of default constructor is same as class modifier. (this rule is applicable only for public and default)
+3. it contains only one line: super(); -> no argument call to super class constructor.
+4. in properly written constructor the first line should be either super(); or this(); otherwise compiler will write
+    super(); for us.
+
+case 1: call to super(); or this() must be first statement in constructors. otherwise, we will get compile time error
+    saying: call to super must be first statement in constructor
+case 2: super() and this() can not be used simultaneously.
+case 3: we can use super() or this() only inside a constructor but not inside any other method. that is we can call a
+    constructor directly from another constructor only.
+
+super(), this() VS super, this
+------------------------------
+super(), this()
+    1. these are constructors calls to super and current class constructors.
+    2. they can be used only in constructors as a first line.
+    3. we can use only one of them in a constructor.
+
+super, this
+    1. these are keywords to refer super class and current class instance members.
+    2. we can use them anywhere except static area.
+    3. we can use them any number of time.
+
+
+for constructors inheritance and overriding concept are not applicable. but overloading concept is applicable.
+every class in java including abstract class can contain constructor, but interface can not contain constructor.
+
+Some use-cases regarding constructors in java
+---------------------------------------------
+Case 1:
+    recursive method call is a RuntimeException saying: StackOverflowError
+    but in our program if there is chance of recursive constructor invocation then the code won't compile, and we will
+    get CompileTimeError. example: RecursiveConstructor.java
+
+Case 2: (Test.java)
+        Note:
+        1. If parent class contains any argument constructor then while writing child classes we have to take special
+            care with respect to constructors.
+        2. Whenever we are writing any arguments' constructor, it's highly recommended writing no-arg constructor also.
+            see Test1.java
