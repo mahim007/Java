@@ -8,7 +8,7 @@ control flow:
 
 RIWO - Read Indirectly Write Only
 -- inside a static block, if we are trying to read a variable that read operation is called direct read.
--- if we are calling a method and within that method if we are trying to read a variable that read operaion is called
+-- if we are calling a method and within that method if we are trying to read a variable that read operation is called
     indirect read.
 -- if a variable is just identified by the JVM and the original value not yet assigned, then the variable is said to be
     in RIWO state.
@@ -21,7 +21,7 @@ Static Block
     loading then we need to use static block.
     -- example 1: at the time of java class loading the corresponding native library should be loaded, hence we have to
     define this activity inside static block.
-    -- example 2: after loading every database direr class, we have to register driver class with driver manager.
+    -- example 2: after loading every database driver class, we have to register driver class with driver manager.
     but inside database driver class there is a static block to perform this activity, and we are not responsible to
     register explicitly.
 -- within a class we can declare any number of static blocks, but all these static blocks will be executed from top to

@@ -1,0 +1,25 @@
+Singleton class
+---------------
+definition:
+    For any java class if we are allowed to create only one object, such type of class is called singleton class.
+    i.e. Runtime, BusinessDelegate, ServiceLocator
+
+advantages:
+    if several people have same requirement then it's not recommended creating a separate object for every requirement. we
+    have to create only one object, and we have to reuse that object so that performance and memory utilization will be
+    improved. this is the central idea of singleton classes.
+
+how to create singleton classes
+-------------------------------
+we can create our own singleton classes for this we have to use private constructor and private static variable and public
+factory method.
+
+Approach 1:
+    see Test.java
+    Runtime class is internally implemented this approach.
+
+Approach 2:
+    see Test1.java
+
+class is not final, but we are not allowed to create child classes, how to do it?
+-- by declaring every constructor private in parent we can restrict child class creation.
