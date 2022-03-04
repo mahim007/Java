@@ -1,0 +1,48 @@
+JAVAC
+-----
+-> we can use javac command to compile a single or group of java files.
+    javac [options] Test.java
+    javac [options] A.java B.java
+    javac [options] *.java
+
+    various options:
+    -version
+    -d
+    -source
+    -verbose
+    -cp / classpath
+
+JAVA
+----
+-> we can java command to run a single class file
+    java [options] Test (A B C) -> command line arguments
+
+    various options:
+    -version
+    -D
+    -cp | -classpath
+    -ea | -esa | -dsa | -da
+
+Note:
+    we can compile any number of source files at a time, but we can run only one .class file at a time.
+
+Classpath
+---------
+-- classpath describes the location where required .class files are available.
+-- java compiler and jvm will use classpath to locate required .class files.
+-- by default jvm will always search the current working directory for the required .class files. if we set classpath
+    explicitly then jvm will search in our specified classpath location and jvm won't search in current working directory.
+
+we can set the classpath in the following three ways:
+1. by using environment variable classpath. this way of setting classpath is permanent and will be preserved across
+    system restarts.
+2. in terminal/command prompt session: set classpath = c:\my-path. once command prompt closes automatically classpath
+    will be lost.
+3. at command level: java -cp c:\my-path Test. this way of setting of classpath will be preserved only for particular
+    command. once command execution completes automatically classpath will be lost.
+
+Note: among three ways of setting classpath, setting classpath at command level is recommended, because dependant
+    classes are varied from command to command. Once we set the classpath we can run our program from any location.
+    once we sat classpath jvm won't search in current working directory, and it will always search in the specified
+    classpath location only.
+    java -classpath -cp .;E: Test
