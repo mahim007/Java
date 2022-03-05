@@ -1,0 +1,41 @@
+example 1: to develop a servlet all reauired dependent classes are available in servlet-api.jar. we have to place this jar file
+    in classpath to compile a servlet program.
+
+example 2: to run a JDBC program all dependant classes are available in ojdbc14.jar . to run jdbc program we have to place this
+    jar file in classpath.
+
+example 3: to use log4j in our application, dependant classes are available in log4j.jar . we have to palce this jar file in the
+    classpath then only, log4j based application can run.
+
+various commands:
+-----------------
+1. to create a jar file: -cvf -> c: create, v:verbose, f:named file
+    jar -cvf myjarfile.jar Test.class
+    jar -cvf myjarfile.jar A.class B.class C.class
+    jar -cvf myjarfile.jar *.class
+    jar -cvf myfile.jar *.*
+
+2. to extract a jar file
+    jar -xvf myjarfile.jar
+
+3. display table of contents of a jar file
+    jar -tvf myjarfile.jar
+
+  to include .class files in classpath only location is needed, but to make jar file available in classpath location
+  is not enough, compulsary we have to include name of the jar file also.
+
+shortcut way to place jar file in classpath:
+-- if we place jar file in the following location then classes and interfaces present int the jar file by default will be
+    to java compiler and jvm. we are not required to set classpath explicitly.
+    jdk.jre.lib.ext.*jar -> extension classpath
+
+system properties
+------------------
+for every system some persistent information will be maintained in the form of system properties. this includes name
+of the os, java verison, jvm vendor, user country etc.
+demo program to print system properties: SystemDemo.java
+
+we can set system property explicitly from the command prompt by using -D option.
+i.e. java -DmyProp=ocjp SystemDemo
+
+The main advantage of setting system property is we can customize the behavior of java program.
