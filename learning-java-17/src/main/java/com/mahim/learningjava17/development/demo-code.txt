@@ -1,0 +1,72 @@
+-------------------- Example 1 ---------------------
+package dir1;
+
+public class AStudent {
+    public void m1() {
+        System.out.println("I need a job immediately");
+    }
+}
+
+
+package dir2;
+
+import dir1.AStudent;
+
+public class Test {
+    public static void main(String[] args) {
+        AStudent student = new AStudent();
+        student.m1();
+        System.out.println("hello dear student");
+    }
+}
+
+
+commands:
+javac -d C:\Users\LEGION\Documents\Java\targert AStudent.java
+javac -d C:\Users\LEGION\Documents\Java\targert -cp C:\Users\LEGION\Documents\Java\targert ITIndustry.java
+java -cp C:\Users\LEGION\Documents\Java\targert dir2.ITIndustry
+
+-------------------------------------- Example 2 ------------------------------------------------------------
+
+location: C:\Users\LEGION\Documents\Java\C\Kareena.java
+package pack1.pack2;
+
+public class Kareena {
+    public void m1() {
+        System.out.println("Kareena: Hello Saif, can you please set hellotune?");
+    }
+
+}
+
+location: C:\Users\LEGION\Documents\Java\D\Saif.java
+package pack3.pack4;
+
+import pack1.pack2.Kareena;
+
+public class Saif {
+
+    public void m2() {
+        Kareena Kareena = new Kareena();
+        Kareena.m1();
+        System.out.println("Saif: Not possible because i'm in SCJP class");
+    }
+}
+
+location: C:\Users\LEGION\Documents\Java\E\Test.java
+import pack3.pack4.Saif;
+
+public class Test {
+    public static void main(String[] args) {
+        Saif saif = new Saif();
+        saif.m2();
+        System.out.println("Operator: Hello Kareena, how can i help?");
+    }
+}
+
+commands:
+
+C:\Users\LEGION\Documents\Java\C>javac -d . Kareena.java
+C:\Users\LEGION\Documents\Java\D>javac -d . -cp C:\Users\LEGION\Documents\Java\C Saif.java
+C:\Users\LEGION\Documents\Java\E>javac -d . -cp C:\Users\LEGION\Documents\Java\D Test.java
+C:\Users\LEGION\Documents\Java\E>java -cp .;C:\Users\LEGION\Documents\Java\D;C:\Users\LEGION\Documents\Java\C Test
+C:\>java -cp C:\Users\LEGION\Documents\Java\E;C:\Users\LEGION\Documents\Java\D;C:\Users\LEGION\Documents\Java\C Test

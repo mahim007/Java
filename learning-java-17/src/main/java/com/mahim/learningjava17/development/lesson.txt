@@ -46,3 +46,12 @@ Note: among three ways of setting classpath, setting classpath at command level 
     once we sat classpath jvm won't search in current working directory, and it will always search in the specified
     classpath location only.
     java -classpath -cp .;E: Test
+    read: https://www.cs.jhu.edu/~gkaptch1/sum19/cs226sum19/resources/JavaCommandLineNotes.html
+
+conclusions:
+-----------
+1. If any location created because of package statement, that location should be resolved using import statement. and
+    base package location we have to update in classpath.
+2. Compiler will check only one level of dependency, whereas JVM will check all levels of dependency.
+3. In classpath the order of location is important, and JVM will always consider from left to right until required
+    match available.
