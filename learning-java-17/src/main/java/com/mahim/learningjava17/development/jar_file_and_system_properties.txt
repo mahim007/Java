@@ -39,3 +39,9 @@ we can set system property explicitly from the command prompt by using -D option
 i.e. java -DmyProp=ocjp SystemDemo
 
 The main advantage of setting system property is we can customize the behavior of java program.
+
+java -Dcourse=scjp Test
+o/p: scjp information
+
+java -Dcourse=another Test
+o/p: scjp information

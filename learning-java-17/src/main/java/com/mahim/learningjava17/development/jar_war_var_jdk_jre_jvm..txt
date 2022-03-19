@@ -1,0 +1,41 @@
+1. jar vs war vs ear
+--------------------
+    jar (Java archive): It contains a group of .class files.
+    war (web archive): A war file represents one web application which contains servlets, jsps, html pages, js, css, xml
+    etc. The main advantage of maintaining web application in the from war file is project deployment, project, delivery
+    and project transportation will become easy.
+    ear (Enterprise archive): An ear file represents one enterprise application, which contains servlets, jsps, ejbs,
+    jms components etc
+
+    note: in general EAR file represents a group of WAR files and JAR files.
+
+webapplication vs enterprise application
+----------------------------------------
+webapplication: a webapplication can be developed by only web related technologies. like servlets, jsps, htmls, js, css,
+xml etc. example: online library management system, online shopping cart.
+
+am enterprice application can be developed by technology from java j2ee like servlet, jsps, ejbs, jms
+example: banking application, telecom based project
+
+note: j2EE/JEE compatible application is enterprise application.
+
+webserver vs application server
+-------------------------------
+webserver provides environment to run web application. it supports only web related technologies like servelets, jsps,
+html etc. example: tomcat
+
+application server provides environment to run enterprise application. it supports any technology from java j2EE/JEE
+like servlets, jsps, EJB, JMS components etc. example: weblogic, websphere, jBoss etc.
+
+note: every application sever contains in-built webserver to provide support for web related technologies.
+
+
+we can a java program in the following ways:
+1. from command prompt we can run .class with java command. i.e. java jarDemo
+2. from command prompt we can run .jar file with java command. i.e. java -jar demo.jar
+3. By double clicking a jar file
+4. by double clicking a batch file
+
+Batch file:
+A batch file contains a group of commands. whenever we double-click a batch file, all commands will be executed one by one
+in the sequence. i.e. runDemoJar.bat
