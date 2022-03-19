@@ -39,3 +39,38 @@ we can a java program in the following ways:
 Batch file:
 A batch file contains a group of commands. whenever we double-click a batch file, all commands will be executed one by one
 in the sequence. i.e. runDemoJar.bat
+
+Difference between path and classpath
+-------------------------------------
+classpath: classpath describes the location where required .class files are available.
+    java compiler and jvm will use classpath to locate required class files. if we are not setting class paths then
+    our program may not compile and may not run.
+
+path: path describes the location where required binary executables are available. if we are not setting path then
+    javac and java command won't work.
+    i.e. set path=C:\Program Files\Java\jdk1.6.0_11\bin
+
+Difference between JDK, JRE and JVM
+-----------------------------------
+JDK: jdk provides environment to develop and run java applications.
+JRE: jre provides environment to run java application.
+JVM: jvm is responsible to run java program line by line. Hence, it is an interpreter.
+
+jdk = jre + development tools
+jre = jvm + library classes
+
+java vs javaw vs javaws
+-----------------------
+java: we can use java command to run a java class file where sout will be executed and corresponding will be displayed
+    to the console. this is java command.
+
+javaw (java without console output) : we can use javaw command to run a java class file where sout will be executed
+    but the corresponding output won't be displayed to the console. in general we can use javaw command to run gui
+    based application.
+
+javaws (java web start utility) : we can use javaws to download a java application from the web and to start its
+    execution. we can use javaws command as follows.
+    i.e. javaws jnlp_url
+    it downloads the application from the specified url and starts execution.
+    the main advantage of this approach is every end user will get updated version and enhancement will become easy
+    because of centralized control.
