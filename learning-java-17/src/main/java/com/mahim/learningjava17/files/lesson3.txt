@@ -1,0 +1,17 @@
+FileReader
+----------
+we can use FileReader to read character data from the file.
+
+Constructors
+------------
+1. FileReader fr = new FileReader(String fileName);
+2. FileReader fr = new FileReader(File f);
+
+Methods
+-------
+1. int read(); returns the unicode value, if the next character not available then this method returns -1.
+    as this method returns unicode value (int value), at the time of printing we have to perform typecasting.
+    see example Test5.java
+
+2. int read(char[] ch); it attempts to read, enough characters from the file into char array and returns number of
+    characters copied.
