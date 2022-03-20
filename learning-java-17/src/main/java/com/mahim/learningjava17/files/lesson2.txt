@@ -1,0 +1,28 @@
+FileWriter:
+-----------
+We can use FileWriter to write character data to the file.
+
+Constructors:
+-------------
+1. FileWriter fw = new FileWriter(String fileName);
+2. FileWriter fw = new FileWriter(File f);
+
+The above file writers meant for overriding of existing data. instead of overriding, if we want append operation, then
+we have to create file writer by using the following constructors.
+
+3. FileWriter fw = new FileWriter(String fileName, boolean append);
+4. FileWriter fw = new FileWriter(File f, boolean append);
+
+Note: if the specified file is not already available then all the above constructors will create that file.
+
+Methods present in FileWriter
+-----------------------------
+1. write(int ch); to write a single character to the file. i.e. fw.write('a'); or fw.write(97);
+2. write(char[] ch); to write an array of characters to the file.
+3. write(String s); to write string to the file.
+4. flush(); to give the guarantee that total data including last character will be returned to the file.
+5. close(); to close the pipeline of the writer.
+
+Note: The main problem with a FileWriter is we have to insert line separator ('\n') manually. which is varied from
+    system to system. it is difficulty to the programmer.
+    we can solve this problem by using BufferedWriter and PrintWriter classes.

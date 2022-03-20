@@ -1,0 +1,70 @@
+important topic/points related java file i/o classes
+1. File
+2. FileWriter
+3. FileReader
+4. BufferedWriter
+5. BufferedReader
+6. PrintWriter
+
+File
+----
+File file = new File("hello.txt"); - this line won't create any physical file. first it will check if there any physical file
+    named with hello.txt is available or not. if it is available, then file variable simply refers that file.
+    if it is not available, then we are just creating a java file object to represent the name hello.txt.
+    i.e. test.java
+
+    we can use java file object to represent directory also.
+    File file = new File("testdir");
+    file.mkdir();
+
+    in Unix everything is treated as file. java file i/o is implemented based unix operating system. hence, java file
+    object can be used to represent both files and directories.
+
+File class constructors
+-----------------------
+1. File f = new File(String name); creates a java file object to represent name of the file or directory in current working directory.
+2. File f = new File(String subdirname, String name); creates a java file object to represent name of the file or directory present in specified subdirectory.
+3. File f = new File(File subdir, String name); creates a java file object to represent name of the file or directory present in specified subdirectory.
+
+Examples
+--------
+-- write code to create a file named with abc.txt in current working directory:
+File file = new File("abc.txt");
+file.createNewFile();
+
+-- write code to create a directory named with demo123 in current working directory, and create a file named with demo.txt
+in that directory:
+
+File dir = new File("demo123");
+dir.mkdir();
+
+File file = new File(dir, "demo.txt"); | File file = new File("demo123", "demo.txt");
+file.createNewFile();
+
+-- create file in some other location:
+
+File f = new File("E:\\xyz", "abc.txt");
+f.createNewFile(); // assuming that E:\xyz folder is already available in our system.
+
+some important methods present in File class:
+---------------------------------------------
+boolean exists(); returns true if the specified file or directory is present, otherwise false.
+
+boolean createNewFile(); first this method will check whether the specified file is already available or not, if it is
+    already available, then this method returns false, without creating any physical file. If the file is not already
+    available then this method will create a new file and returns true.
+
+boolean mkdir(); same explanation
+
+boolean isFile(); returns true if the specified file object pointing to physical file.
+
+boolean isDirectory(); same explanation
+
+String[] list(); this method returns the names of all files and subdirectories present in specified directory.
+
+long length(); returns the number of char present in specified file.
+
+boolean delete(); remove a specified file or directory
+
+-- write a program to display the names of all files and directories present in C:\{some_dir}
+    i.e. Test3.java
