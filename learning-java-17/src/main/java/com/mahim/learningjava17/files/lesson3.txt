@@ -15,3 +15,77 @@ Methods
 
 2. int read(char[] ch); it attempts to read, enough characters from the file into char array and returns number of
     characters copied.
+
+3. void close();
+
+Note: By using FileReader we can read data character by character which is not convenient to the programmer.
+
+Usage of FileWriter and FileReader is not recommended because:
+1. while writing data by FileWriter, we have to insert line separator (\n) manually which is varied from system to system.
+    it is difficult to the programmer.
+2. By using FileReader we can read data character by character, which is not convenient to the programmer.
+
+To overcome these problems we should go for next level - BufferedReader and BufferedWriter
+
+BufferedWriter
+--------------
+-- we can use BufferedWriter to write character data to the file.
+
+Constructors
+------------
+1. BufferedWriter bw = new BufferedWriter(Writer w);
+2. BufferedWriter bw = new BufferedWriter(Writer w, int bufferSize);
+
+Note: BufferedWriter can't communicate directly with the file, it can communicate via some writer object.
+
+which of the following are valid?
+1. BufferedWriter bw = new BufferedWriter("abc.txt"); -> invalid
+2. BufferedWriter bw = new BufferedWriter(new File("abc.txt")); -> invalid
+3. BufferedWriter bw = new BufferedWriter(new FileWriter("abc.txt")); -> valid
+4. BufferedWriter bw = new BufferedWriter(new BufferedWriter(new FileWriter("abc.txt"))); -> valid (two level buffering)
+
+Methods
+-------
+1. write(int ch)
+2. write(char[] ch)
+3. write(String s)
+4. close()
+5. flush()
+6. newLine() -> to insert a line separator
+
+when compared with the FileWriter which of the following capability available extra in method form in BufferedWriter.
+1. writing data to the file
+2. close the file
+3. flushing the file
+4. inserting a new line character
+
+i.e. Test7.java
+whenever we are closing BufferedWriter, automatically internal FileWriter will be closed. We are not required to close
+explicitly.
+
+BufferedReader
+---------------
+we can use BufferedReader to read character data from the file.
+The main advantage of BufferedReader when compared with FileReader is, we can read data line by line in addition to
+char by char.
+
+Constructor
+-----------
+1. BufferedReader br = new BufferedReader(Reader r);
+2. BufferedReader br = new BufferedReader(Reader r, int bufferSize);
+
+Note: BufferedReader can't communicate directly with file and it can communicate via some Reader object.
+
+Methods
+-------
+1. int read()
+2. int read(char[] ch)
+3. void close
+4. String readLine(); it attempts to read next line from the file and returns it. if the next line is not
+available then it returns null.
+
+example Test8.java
+when ever we are closing BufferedReader automatically underlying Reader will be closed. and we do not need to close it
+explicitly.
+
+the most enhanced reader to read character data from the file is BufferedReader.
