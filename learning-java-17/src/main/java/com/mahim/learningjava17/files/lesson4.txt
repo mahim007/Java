@@ -53,3 +53,7 @@ see Test10.java
 
 Write a program to merge data from two files into a third file were merging should be done line by line alternatively.
 see Test11.java
+
+Write a program to perform file extraction operation:
+
+Write a java program to remove duplicates from the given input file:
